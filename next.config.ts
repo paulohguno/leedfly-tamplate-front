@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  images: {
+    // Fotos da galeria da landing, servidas pelo CDN do Unsplash.
+    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com", pathname: "/photo-**" }],
+  },
   async headers() {
     return [
       {
